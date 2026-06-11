@@ -1,7 +1,9 @@
 # Модель: Метод простої ітерації (5 семестр)
 # Автор: Ковальжі Сергій, група АІ-235
 
-FROM python:3.10-slim
+FROM python:3.12-slim
 WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py .
 CMD ["python", "main.py"]
